@@ -13,29 +13,20 @@
 <http://creativecommons.org/licenses/by-nc/3.0/legalcode>
 
 ### 关于作者 ###
-Karl Seguin是一位在多个技术领域有着丰富经验的研发人员，精通.NET以及Ruby。作为技术文档撰写人，他有时还会参与OSS项目的工作或做演讲。在MongoDB方面，他曾是C# MongoDB library NoRM的核心开发人员，开发了互动教程[mongly](http://mongly.com)以及[Mongo Web Admin](https://github.com/karlseguin/Mongo-Web-Admin)。他还用MongoDB开发了[mogade.com](http://mogade.com/)为业余游戏开发者提供免费服务。
-
-Karl还著有[The Little Redis Book](http://openmymind.net/2012/1/23/The-Little-Redis-Book/)。
-
-他的博客<http://openmymind.net>，推特账号是[@karlseguin](http://twitter.com/karlseguin)。
+Karl Seguin是一位在多个技术领域有着丰富经验的研发人员，精通.NET以及Ruby。作为技术文档撰写人，他有时还会参与OSS项目的工作或做演讲。在MongoDB方面，他曾是C# MongoDB library NoRM的核心开发人员，开发了互动教程以及[Mongo Web Admin]。他还用MongoDB开发了[mogade.com]为业余游戏开发者提供免费服务。
 
 ### 致谢 ###
 Perry Neal，谢谢你给我无法衡量的帮助，谢谢你锐利的眼光、独到的思路以及无比的热情。非常感谢。
 
-### 最新版本 ###
-本书的最新版本可以在下面的链接找到：
-
-<http://github.com/karlseguin/the-little-mongodb-book>.
 
 ### 关于本书的中文版本 ###
-本书的中文版由[justinyhuang](http://justinyhuang.com)完成，基于与原著相同的许可证。最新版本在[GitHub](https://github.com/justinyhuang/the-little-mongodb-book-cn)。译文的纰漏欢迎告知<yang.huang@ymail.com>或直接提交github。
+本书的中文版由[justinyhuang]完成，基于与原著相同的许可证。译文的纰漏欢迎告知直接提交github。
 
-\clearpage
 
 ## 简介 ##
  > 本章很短，但不是我的错，MongoDB就是那么简单易学。
 
-人们总是说科技的发展风驰电掣。确实，一直以来都不断有新的技术涌现出来。但是我却一直坚持认为程序员所用的基本技术的发展相对而言就缓慢很多。您可以很多年不学习什么但还是可以混过去。让人瞩目的是业已成熟的技术被替代的速度。仿佛一夜间，那些长期以来业已成熟的技术忽然就失去了开发者的关注，昔日地位岌岌可危。
+人们总是说科技的发展风驰电掣。确实，一直以来都不断有新的技术涌现出来。但是我却一直坚持认为程序员所用的基本技术的发展相对而言就缓慢很多。您可以很多年不学习什么但还是可以混过去。让人瞩目的是业已成熟的技术被替代的速度。仿佛一夜间，那些长期以来已成熟的技术忽然就失去了开发者的关注，昔日地位岌岌可危。
 
 NoSQL逐步攻陷了传统关系数据库的领地，就是这种急剧转变最好的例子。仿佛就在昨天所有的网页还是由一些RDBMS驱动的，而一早起来就已经有大约5种NoSQL的方案证明了他们都是有价值的解决方案。
 
@@ -48,9 +39,9 @@ NoSQL逐步攻陷了传统关系数据库的领地，就是这种急剧转变最
 您也许也注意到了，在书中我们是混用Mongo和MongoDB这两个词的。
 
 ## 准备 ##
-本书大部分篇幅会用来关注MongoDB的核心功能。所以我们基本上使用的是MongoDB的外壳（shell）。shell在学习MongoDB还有管理数据库的时候很有用，不过您的实际代码还是会用相应的语言来驱动mongoDB的。
+本书大部分篇幅会用来关注MongoDB的核心功能。所以我们基本上使用的是MongoDB的shell。shell在学习MongoDB还有管理数据库的时候很有用，不过您的实际代码还是会用相应的语言来驱动mongoDB的。
 
-这也引出了关于MongoDB您首先需要了解的东西：它的驱动。MongoDB有许多针对不同语言的[官方驱动](http://www.mongodb.org/display/DOCS/Drivers)。可以认为这些驱动和您所熟知的各种数据库驱动是一样的。基于这些驱动，MongoDB的开发社区又搭建了更多语言/框架相关的库。比如说[NoRM](https://github.com/atheken/NoRM)就是一个实现了LINQ的C#库，还有[MongoMapper](https://github.com/jnunemaker/mongomapper)，一个很好地支持ActiveRecord的Ruby库。您可以自行决定直接针对MongoDB的核心驱动编程，或者采用一些高层的库。在这里指出这点，是因为不少MongoDB的新手都会为既有官方驱动又有社区提供的库而困惑不已——前者着重与MongoDB的核心通讯/连接，而后者则提供了更多语言/框架相关的具体实现。
+这也引出了关于MongoDB您首先需要了解的东西：它的驱动。MongoDB有许多针对不同语言的[官方驱动](https://docs.jinmu.info/MongoDB-Manual-zh/#/20-mongodb-drivers/01-MongoDB-Scala-Driver)。可以认为这些驱动和您所熟知的各种数据库驱动是一样的。基于这些驱动，MongoDB的开发社区又搭建了更多语言/框架相关的库。比如说[NoRM]就是一个实现了LINQ的C#库，还有[MongoMapper]，一个很好地支持ActiveRecord的Ruby库。您可以自行决定直接针对MongoDB的核心驱动编程，或者采用一些高层的库。在这里指出这点，是因为不少MongoDB的新手都会为既有官方驱动又有社区提供的库而困惑不已——前者着重与MongoDB的核心通讯/连接，而后者则提供了更多语言/框架相关的具体实现。
 
 我建议您在阅读本书的同时，也在MongoDB中尝试我给出的例子。如果在这个过程中您自己发现了什么问题，也可以在MongoDB环境中探索需求答案。安装并运行MongoDB其实很简单，只需要几分钟的时间。那么现在就开始吧。
 
@@ -76,7 +67,6 @@ NoSQL逐步攻陷了传统关系数据库的领地，就是这种急剧转变最
 
 此时您可以运行`mongo`了（没有*d*），它会启动一个shell并连接到运行中的服务器。输入'db.version()`以确认所有的东西都正常工作：您应该可以看到您所安装的软件版本。
 
-\clearpage
 
 ## 第一章 - 基础 ##
 从了解基本的构成开始，我们开始踏上MongoDB探索之路。显然，这是认识MongoDB的关键，同时也有助于搞清楚MongoDB适用范围的高层次问题。
@@ -165,7 +155,7 @@ MongoDB的查询选择器就像SQL代码中的`where`语句。因此您可以用
 
 您可能已经注意到了，在最后的一个例子中有一个非常棒的特性：`loves`域是一个数组。在MongoDB中数组是一级对象(first class object)。这是非常非常有用的功能。一旦用过，没有了它你可能都不知道怎么活下去。更有意思的是基于数组的选择是非常简单的：`{loves: 'watermelon'}`就会找到`loves`中有`watermelon`这个值的所有文档。
 除了我们目前所介绍过的，还有更多的操作符
-可以使用。最灵活的是`$where`，允许输入JavaScript并在服务器端运行。这些都在MongoDB网站的[Advanced Queries](http://www.mongodb.org/display/DOCS/Advanced+Queries#AdvancedQueries)部分有详细介绍。不过这里介绍的都是基本的命令，了解了这些您就可以开始使用Mongo了。而这些命令也往往是您大多数时间会用到的所有命令。
+可以使用。最灵活的是`$where`，允许输入JavaScript并在服务器端运行。这些都在MongoDB中文网站的[Advanced Queries](https://docs.jinmu.info/MongoDB-Manual-zh/#/16-reference/01-operator)部分有详细介绍。不过这里介绍的都是基本的命令，了解了这些您就可以开始使用Mongo了。而这些命令也往往是您大多数时间会用到的所有命令。
 
 我们已经介绍过怎样在`find`命令中使用选择器了。此外选择器还可以用在`remove`命令中，我们已经大致提过；还有`count`命令中，我们并没有介绍不过您自己可以去试试看；还有`update`命令，我们在后面还会提到。
 
@@ -213,10 +203,9 @@ MongoDB为`_id`域生成的`ObjectId`也是可以被选择的，就像这样：
 
 	db.unicorns.update({name: 'Aurora'}, {$push: {loves: 'sugar'}})
 
-MongoDB网站上的[Updating](http://www.mongodb.org/display/DOCS/Updating)部分可以找到其他更新修改符的更多信息。
+MongoDB网站上的[Updating](https://docs.jinmu.info/MongoDB-Manual-zh/#/04-crud/03-update-documents)部分可以找到其他更新修改符的更多信息。
 
-### 插新（Upsert） ###
- > 译者：[Upsert](http://en.wikipedia.org/wiki/Upsert)的意思是update if present; insert if not。是update和insert合体的产物。没有找到一个合适的词作为翻译，于是我斗胆发明了“插新”这个词，取或插入或更新之意。如有更好的办法，还请指点。
+### 插入或更新（Upsert） ###
 
 `update`的一个比较讨喜的出人意料之处就是它完全支持插新(`upsert`)。当目标文档存在的时候，插新操作会更新该文档，否则就插入该新文档。插新在某些情况下是很方便的，当您碰到这种情况的时候就会知道了。为了打开插新的功能，我们在使用`update`时把第三个参数设为`true`。
 
@@ -320,7 +309,7 @@ MongoDB网站上的[Updating](http://www.mongodb.org/display/DOCS/Updating)部�
 
 	db.employees.find({manager: ObjectId("4d85c7039ab0fd70a117d730")})
 
-没什么了不起的。在最糟糕的情况下，为弥补连接的缺失需要做的只是再多查询一次而已，该查询很可能是经过索引了的。
+为弥补连接的缺失需要做的只是再多查询一次而已，该查询很可能是经过索引了的。
 
 #### 数组和嵌入文档（Embedded Documents） ####
 MongoDB没有连接并不意味着它没有其他的优势。还记得我们曾说过MongoDB支持数组并把它当成文档中的一级对象吗？当处理多对一或是多对多关系的时候，这一特性就显得非常好用了。用一个简单的例子来说明，如果一个员工有两个经理，我们可以把这个关系储存在一个数组当中：
@@ -395,14 +384,14 @@ MongoDB支持一个叫做DBRef的功能，许多MongoDB的驱动都提供对这�
 ### 写操作 ###
 MongoDB擅长的一个特别角色是日志的记录。MongoDB有两点使得它的写操作非常快。第一，发出一条写命令后它会马上返回而不等待真正的写动作执行。第二，随着1.8中引入的日记功能（journaling），以及2.0中所做的优化加强，现在已经可以根据数据持久性来控制写操作的行为。这些设定的值，加上指定多少个服务器得到一份数据后才算是一次成功的写操作，在每次写的时候都是可以设置的。这些使得对写操作的性能以及数据的持久性的控制都上了一个档次。
 
-除了上述性能上的因素，日志数据还是这样的一种数据格式：它们用无模式集合往往更有优势。最后，MongoDB还有一项技术叫做[定量集合（capped collection）](http://www.mongodb.org/display/DOCS/Capped+Collections)。目前为止，我们所创建的集合都是隐式创建的普通集合。我们可以用`db.createCollection`命令创建并标明它是给标量集合：
+除了上述性能上的因素，日志数据还是这样的一种数据格式：它们用无模式集合往往更有优势。最后，MongoDB还有一项技术叫做[定量集合（capped collection）](https://docs.jinmu.info/MongoDB-Manual-zh/#/01-introduction/03-databases-and-collections/03-capped-collections)。目前为止，我们所创建的集合都是隐式创建的普通集合。我们可以用`db.createCollection`命令创建并标明它是给标量集合：
 
 	//限制标量集合的大小为1MB
 	db.createCollection('logs', {capped: true, size: 1048576})
 
 当上面的定量集合增长到1MB的限制时后，旧的文档就会被自动删除。可以用`max`来限制文档的个数而不是整个集合的尺寸。定量集合有一些有意思的特性。比如说，你可以不断的更新文档，但是文档不会变大。同时，它会保存插入的顺序，因此没有需要添加额外的索引来实现基于时间的排序。
 
-是时候说明这个了：如果需要知道写操作有没有出错（这和默认的射后不理的写行为相反）（译者：fire-and-forget，[射后不理](http://zh.wikipedia.org/wiki/%E5%B0%84%E5%BE%8C%E4%B8%8D%E7%90%86)）只需要再发一个命令：`db.getLastError()`。多数的驱动都会把这种行为封装成一个*安全的写操作*，用`{:safe => true}`作为`insert`的第二个参数来声明。
+是时候说明这个了：如果需要知道写操作有没有出错,只需要再发一个命令：`db.getLastError()`。多数的驱动都会把这种行为封装成一个*安全的写操作*，用`{:safe => true}`作为`insert`的第二个参数来声明。
 
 ### 持久性（Durability） ###
 在1.8版之前，MongoDB是不支持单服务器的持久性的。也就是说，一个服务器宕机就会导致数据丢失。当时的解决方法就是在多台服务器上运行MongoDB（MongoDB支持复制）。新加入到1.8的一个重要特性就是日记（journaling）。打开这个功能需要在我们最早设置MongoDB时创建的`mongodb.config`文件中加入一行`journal=true`（如果想要立即生效，还需要重启服务器）。您应该是会想要打开这项功能的。（在以后的版本中将会默认打开）。不过，在有些情况下，您可能会要关闭日记以增加吞吐量，哪怕这样做存在风险。（需要指出的是有些应用对损失一些数据还是可以接受的）
@@ -417,17 +406,17 @@ MongoDB是不支持事务的。不过它有两个替代的方案，其中一个�
 
 第一个就是MongoDB的众多原子操作。只要它们能够解决你的问题，都很好用。之前已经介绍过一些简单的诸如`$inc`和`$set`。还有像`findAndModify`这样的原子操作，可以更新或是删除一个文档并返回修改过后的文档，且所有动作在一个原子操作内完成。
 
-当原子操作不能满足要求时，可以退而尝试第二种方案：两阶段提交。两阶段提交之于事务就好比手工解引用（dereference，译者：关于这个词的翻译有很多种，用引、提领、解引用等，大家知道是什么意思就好。）之于连接。这是一个代码中实现的独立于存储系统的方案。两阶段提交其实在关系数据库中有普遍的应用，用以在多个数据库之间实现事务。MongoDB的网站有[一个例子](http://www.mongodb.org/display/DOCS/two-phase+commit)演示了最常见的场合（资金转账）。其主要思想就是把事务的状态储存在需要更新的文档中，并手工一步一步完成初始化-等待-提交或是回滚的每一个步骤。
+当原子操作不能满足要求时，可以退而尝试第二种方案：两阶段提交。两阶段提交之于事务就好比手工解引用（dereference，译者：关于这个词的翻译有很多种，用引、提领、解引用等，大家知道是什么意思就好。）之于连接。这是一个代码中实现的独立于存储系统的方案。两阶段提交其实在关系数据库中有普遍的应用，用以在多个数据库之间实现事务。MongoDB的网站有[一个例子](https://docs.jinmu.info/MongoDB-Manual-zh/#/07-transactions)演示了最常见的场合。其主要思想就是把事务的状态储存在需要更新的文档中，并手工一步一步完成初始化-等待-提交或是回滚的每一个步骤。
 
 MongoDB对嵌套文档以及无模式的支持使得两阶段提交稍微不那么痛苦了，不过这依旧不是一个很好的流程，尤其是当您刚刚开始学/用它的时候。
 
 ### 数据处理 ###
-MongoDB依靠MapReduce来完成大部分的数据处理工作。它有一些[基本的聚合能力](http://www.mongodb.org/display/DOCS/Aggregation)，尽管如此，无论在何种情况下您还是应该使用MapReduce。下一章我们将详细讨论MapReduce。现在把它当成是一个非常强大的工具，另外一种实现`group by`的方法。（这样说事实上低估了MapReduce）MapReduce的一个长处是它可以并行地处理大量的数据。可是MongoDB的实现却依赖于单线程的JavaScript。这又意味着什么呢？意味着如果是处理大量的数据，很可能还是需要用其他的工具，比如说Hadoop。幸好，这两个系统很好的实现了互补，且看这个[MongoDB的Hadoop适配器](https://github.com/mongodb/mongo-hadoop)。
+MongoDB依靠MapReduce来完成大部分的数据处理工作。它有一些[基本的聚合能力](https://docs.jinmu.info/MongoDB-Manual-zh/#/05-aggregation)，尽管如此，无论在何种情况下您还是应该使用MapReduce。下一章我们将详细讨论MapReduce。现在把它当成是一个非常强大的工具，另外一种实现`group by`的方法。（这样说事实上低估了MapReduce）MapReduce的一个长处是它可以并行地处理大量的数据。可是MongoDB的实现却依赖于单线程的JavaScript。这又意味着什么呢？意味着如果是处理大量的数据，很可能还是需要用其他的工具，比如说Hadoop。幸好，这两个系统很好的实现了互补，且看这个[MongoDB的Hadoop适配器]。
 
 当然，并行处理数据也不是关系数据库所擅长的。现在已经有计划在将来的MongoDB版本中加强处理非常大的数据的能力。
 
 ### 地理空间 ###
-MongoDB的另外一个很强大的功能就是它对地理信息索引功能的支持。这个功能允许把X和Y坐标储存在文档中，然后可以用`$near`查找文档中靠近某个坐标的点，或是用`$within`找出位于某个矩形或是一个圆形中的点。这个功能可以用一些可视的例子来演示，如果您想了解多一些，我邀请您来试试这个[5分钟交互式地理空间教程](http://tutorial.mongly.com/geo/index)
+MongoDB的另外一个很强大的功能就是它对地理信息索引功能的支持。这个功能允许把X和Y坐标储存在文档中，然后可以用`$near`查找文档中靠近某个坐标的点，或是用`$within`找出位于某个矩形或是一个圆形中的点。这个功能可以用一些可视的例子来演示.
 
 ### 成熟度与可用工具 ###
 你应该很可能早已经知道了答案，不过MongoDB明显比大多数的关系数据库要年轻。这个当然是您需要考虑的。究竟这个因素有多重要取决于您在做的是什么系统以及将怎样实现它。无论怎样，一个客观的评价是不会忽略这一事实：MongoDB很年轻而且周边可用的工具也不是很好用（虽然很多非常成熟的关系数据库可用的工具也很糟糕！）例如，不能支持十进制浮点数对货币数据系统来说就是一个很明显的问题（虽然不一定是致命的缺陷）
@@ -595,7 +584,7 @@ MongoDB中是对集合使用`mapReduce`的。`mapReduce`需要一个映射函数
 第三个参数是一个可选项，比如可以用来过滤、排序或是限制需要分析的文档。也可以将一个`finalize`方法应用到`reduce`之后的结果上。
 
 ### 本章小结 ###
-这是介绍了MongoDB真正与众不同指出的第一个章节。如果您觉得很不自在，要知道您总是可以使用MongoDB的其他[聚合能力](http://www.mongodb.org/display/DOCS/Aggregation)事情变得简单一些。不过归根结底，MapReduce是MongoDB最吸引人的功能之一。学会编写映射函数和缩减函数的关键在于把`映射`输出的数据以及`缩减`所需要的数据可视化，并真正了解这些数据。
+这是介绍了MongoDB真正与众不同指出的第一个章节。如果您觉得很不自在，要知道您总是可以使用MongoDB的其他[聚合能力](https://docs.jinmu.info/MongoDB-Manual-zh/#/05-aggregation)事情变得简单一些。不过归根结底，MapReduce是MongoDB最吸引人的功能之一。学会编写映射函数和缩减函数的关键在于把`映射`输出的数据以及`缩减`所需要的数据可视化，并真正了解这些数据。
 
 \clearpage
 
@@ -622,7 +611,7 @@ MongoDB中是对集合使用`mapReduce`的。`mapReduce`需要一个映射函数
 
 索引的顺序（1为升序，-1为降序）对于单键索引没有关系，不过对于复合索引来说在排序或是使用范围条件时就有影响了。
 
-[索引页](http://www.mongodb.org/display/DOCS/Indexes)有更多关于索引的信息。
+[索引页](https://docs.jinmu.info/MongoDB-Manual-zh/#/08-indexes)有更多关于索引的信息。
 
 ### Explain ###
 要知道索引有没有使用索引，可以对游标使用`explain`方法：
@@ -636,7 +625,7 @@ MongoDB中是对集合使用`mapReduce`的。`mapReduce`需要一个映射函数
 	db.unicorns.find({name: 'Pilot'}).explain()
 
 ### 射后不理的写操作 ###
-之前我们有提到过，MongoDB中的写操作默认为[射后不理](http://zh.wikipedia.org/wiki/%E5%B0%84%E5%BE%8C%E4%B8%8D%E7%90%86)。这样做可以获得一定的性能提高，同时也带来了系统崩溃时丢失数据的风险。有意思的是这种类型的写操作在插入/更新破坏了某唯一的约束时，是不返回错误的。若需要得到写失败的通知，就要在插入后调用`db.getLastError()`。很多驱动都把这一细节封装起来了，取而代之的是*安全的写*操作——往往会多提供一个参数用来设置。
+之前我们有提到过，MongoDB中的写操作。这样做可以获得一定的性能提高，同时也带来了系统崩溃时丢失数据的风险。有意思的是这种类型的写操作在插入/更新破坏了某唯一的约束时，是不返回错误的。若需要得到写失败的通知，就要在插入后调用`db.getLastError()`。很多驱动都把这一细节封装起来了，取而代之的是安全的写操作——往往会多提供一个参数用来设置。
 
 可惜的是shell并不提供安全的插入，因此我们就无法实验这一特性了。
 
@@ -651,8 +640,6 @@ MongoDB的复制于关系数据库的复制类似。写入的数据发送到主�
 ### 统计 ###
 可以通过`db.stats()`获得数据库的数据统计信息。当中的大多数都和数据库的大小有关。也可以获取某个集合的统计信息。比如说可以用`db.unicorns.stats()`获得`unicorns`的相关信息。这些信息大部分还是和集合的大小相关。
 
-### 网络接口 ###
-在MongoDB启动时的信息中有一个基于网络的管理工具的链接（如果您在shell中向上翻页到启动`mongod`时的部分应该还可以看到）。可以在浏览器中输入<http://localhost:28017/>以访问该工具。为了更好的使用这个工具，还需要在配置文件中加入`rest=true`并重启`mongod`进程。网络接口提供了很多关于服务器当前状态的信息。
 
 ### 分析器（Profiler） ###
 下面的命令将启动MongoDB的分析器：
@@ -698,9 +685,11 @@ MongoDB的复制于关系数据库的复制类似。写入的数据发送到主�
 ### 本章小结 ###
 在这章中我们看到了MongoDB的不同命令、工具以及性能方面的细节。并不是所有的东西都有介绍，我们只选了最常见的那些。MongoDB的索引和关系数据库中的索引很相像，其他的很多工具也是这样。但是，很多工具的使用在MongoDb中更简洁扼要。
 
-\clearpage
 
 ## 总结 ##
-至此您对MongoDB的了解已经足以开始在实际项目中使用它了。关于MongoDB的远不止我们所介绍的这些，不过您需要做的下一件事应该是把在这里所学到的只是汇总起来，并熟悉您即将用到的驱动。MongoDb的[网站](http://www.mongodb.com/)有很多有用的信息。其[官方讨论组](http://groups.google.com/group/mongodb-user)则是一个问问题的好地方。
+至此您对MongoDB的了解已经足以开始在实际项目中使用它了。关于MongoDB的远不止我们所介绍的这些，不过您需要做的下一件事应该是把在这里所学到的只是汇总起来，并熟悉您即将用到的驱动。MongoDb的[网站](https://docs.jinmu.info/MongoDB-Manual-zh/#/)有很多有用的信息。
 
 NoSQL的诞生不仅仅因为有必要，同时也是为了实践新的方法。应该承认的是这个领域一直在向前发展，尽管有时候会失败，但是如果我们不去尝试，就无法拥抱成功。我想，这应该是我们推进职业生涯的正确方法。
+
+## 其他 ##
+如需学习更多MonogoDB相关的知识，请访问[MongoDB中文手册](https://docs.jinmu.info/)
