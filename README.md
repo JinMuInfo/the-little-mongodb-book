@@ -1,5 +1,4 @@
-
-![The Little MongoDB Book, By Karl Seguin](title.png)\
+![The Little MongoDB Book, By Karl Seguin](title.png)
 
 
 ## 关于本书 ##
